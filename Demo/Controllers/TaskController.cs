@@ -68,6 +68,13 @@ namespace Demo.Controllers
             }
             return _taskServices.Add(models);
         }
+        [HttpPost]
+        [Route("multiple-delete")]
+        public IActionResult DelMul(List<Guid> ids)
+        {
+            _taskServices.Delete(ids);
+            return Ok();
+        }
        
     }
 }
